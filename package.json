@@ -1,0 +1,22 @@
+{
+  "name": "sohn-compositions-audio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:watch": "nodemon",
+    "start": "node index.js"
+  },
+  "author": "Ben Turner",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.23.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
