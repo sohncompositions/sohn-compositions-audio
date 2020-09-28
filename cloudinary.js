@@ -8,7 +8,7 @@ cloudinary.config({
 })
 
 const fetchAudioTrack = async filename => {
-    const url = await cloudinary.url(`${process.env.AUDIO_PATH}/${filename}`, { resource_type: "video", sign_url: true })
+    const url = await cloudinary.url(`${process.env.AUDIO_FOLDER_PATH}/${filename}`, { resource_type: "video", sign_url: true })
     return new Promise((res, rej) => {
         http.get(url, response => {
             const status = response.statusCode;
@@ -16,7 +16,7 @@ const fetchAudioTrack = async filename => {
             const buffer = [];
             response.on('data', data => buffer.push(data));
             response.on('end', () => res(Buffer.concat(buffer)));
-            response.on('error', err => rej(err))
+            response.on('error', err => rej({ status, message: err.message }))
             if (![200].includes(response.statusCode)) rej({ status, message })
         })
     })

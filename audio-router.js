@@ -10,7 +10,7 @@ audioRouter.route('/:filename')
             res.setHeader('Content-Type', 'arraybuffer')
             res.status(200).end(buffer)
         } catch (err) {
-            next({ status: 500, message: 'There was a problem retrieving audio file from Cloudinary: ' + err.message })
+            next({ status: err.status, message: `There was a problem retrieving '${req.params.filename}' from Cloudinary: ${err.message}` })
         }
     });
 

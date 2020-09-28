@@ -7,7 +7,7 @@ const { errorHandler, refererWhitelister } = require('./middleware');
 const server = express();
 
 server.use(cors(config.whiteListedOrigins))
-server.use('/audio', refererWhitelister, audioRouter);
+server.use('/api/audio', refererWhitelister, audioRouter);
 server.use(errorHandler)
 
 module.exports = { server };
