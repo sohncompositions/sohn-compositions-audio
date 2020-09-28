@@ -11,8 +11,8 @@
 - All audio files should be uploaded using [Cloudinary](https://cloudinary.com/) GUI.
 
 ### Configuring Server 
-- Make sure your Heroku app is connected to your github repository. From the Deploy tab, choose Connect To Github and select your the audio server repository (currently `sohn-compositions-audio`).
-- From [Heroku](https://dashboard.heroku.com) application, you will need to make sure the following environment/config variables exist under the Settings tab:
+- Make sure your [Heroku](https://dashboard.heroku.com) app is connected to this github repository. From the Deploy tab, choose Connect To Github and select this repository.
+-  You will also need to make sure the following environment/config variables exist under the Settings tab:
     - `API_KEY`, `API_SECRET`, and `CLOUD_NAME`
         - Provided by Cloudinary
     - `AUDIO_FOLDER_PATH`
